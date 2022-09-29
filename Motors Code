@@ -4,8 +4,8 @@
 # define R_PWM_PIN 9
 # define R_DIR_PIN 15
 
-# define FWD HIGH
-# define REV LOW
+# define FWD LOW
+# define REV HIGH
 
 // Runs once.
 void setup() {
