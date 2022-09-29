@@ -54,4 +54,10 @@ analogWrite( R_PWM_PIN, 20 );
   // An empty loop can block further uploads.
   // A small delay to prevent this for now.
   delay(5);
+  analogWrite( L_PWM_PIN, 0);
+  analogWrite( R_PWM_PIN, 0);
+  while(1) {
+    Serial.println("Program Halted");
+    delay(500);
+  }
 }
