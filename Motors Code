@@ -7,6 +7,10 @@
 # define FWD LOW
 # define REV HIGH
 
+
+
+
+
 // Runs once.
 void setup() {
 
@@ -36,28 +40,48 @@ analogWrite( R_PWM_PIN, 0 );
 
 }
 
+
+
+
+
+
+
+
 // Repeats.
 void loop() {
 
-  // Add code to set the direction of rotation
-  // for the left and right motor here.
-digitalWrite(L_DIR_PIN, FWD);
-digitalWrite(R_DIR_PIN, FWD);
+float left_pwm = analogWrite( L_PWM_PIN, );
+float right_pwm = analogWrite( R_PWM_PIN, );
 
-  // Use analogWrite() to set the power to the
-  // motors.
-  // 20 is a low level of activation to test
-  // the motor operation.
-analogWrite( L_PWM_PIN, 20 );
-analogWrite( R_PWM_PIN, 20 );
+void setLeftMotorPower( float left_pwm, float right_pwm ) {
+  while (right_pwm, left_pwm == [-150 : 150] {
+    analogWrite( L_PWM_PIN, left_pwm);
+    analogWrite( R_PWM_PIN, right_pwm );
+    digitalWrite(L_DIR_PIN, FWD);
+    digitalWrite(R_DIR_PIN, FWD);  
+  else 
+    analogWrite( L_PWM_PIN, 0);
+    analogWrite( R_PWM_PIN, 0);
+    while(1) {
+    Serial.println("Unacceptable PWM Power, Program Halted");
+    delay(500);
+   }
+  }
+}
+
+
+
+
+
 
   // An empty loop can block further uploads.
   // A small delay to prevent this for now.
-  delay(5);
-  analogWrite( L_PWM_PIN, 0);
-  analogWrite( R_PWM_PIN, 0);
-  while(1) {
-    Serial.println("Program Halted");
-    delay(500);
+delay(5);
+  
+analogWrite( L_PWM_PIN, 0);
+analogWrite( R_PWM_PIN, 0);
+while(1) {
+  Serial.println("Program Halted");
+  delay(500);
   }
 }
